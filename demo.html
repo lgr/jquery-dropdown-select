@@ -37,12 +37,16 @@
 	$(document).ready(function () {
 		$('#demo_menu').DropDownSelect({
 			initial_value: 0,
-			css: {element: {'max-width': 165}},
+			css: {element: {'min-width': 170}},
+			button: true,
 			choices: [{id: 0, label: '<img class="icon" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/22px-Commons-logo.svg.png"/>Add item'}, 
-				{id: 1, label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/22px-Flag_of_Spain.svg.png\"/>Do something else"},
-				{id: 2, label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/24px-Wikiquote-logo.svg.png\"/>Make Private"},
-				{id: 2, label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/POL_Warszawa_COA.svg/100px-POL_Warszawa_COA.svg.png\"/>Public"},
+				{id: 'one', label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/22px-Flag_of_Spain.svg.png\"/>Do something else"},
+				{id: 'two', label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/24px-Wikiquote-logo.svg.png\"/>Make Private"},
+				{id: 'three', label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/POL_Warszawa_COA.svg/100px-POL_Warszawa_COA.svg.png\"/>Public"},
 			]
+		}).change(function(){
+			$('#selected_index').html($(this).DropDownSelect('selected'));
+			$('#selected_label').html($(this).DropDownSelect('selected_label'));
 		});
 	});
 	</script>
@@ -55,12 +59,19 @@
 	<h2>Description</h2>
 	<p>
 		This is a demonstration page that shows a simple drop down select menu. The menu was created on the basis of the standard jQuery UI elements. The main reason is that standard jQuery UI don't offer any widget of this kind.
-
-		Wanna contribute to this project?  <a href="https://github.com/claviska/jquery-dropdown">It’s on GitHub</a>
+		<br/><br/>
+		Do you want to contribute to this plugin?  <a href="https://github.com/lgr/jquery-dropdown-select">It’s on GitHub</a>
 	</p>
 	
 	<div id="demo_menu"></div>
-	<br/><br/><br/><br/>
+	<br/><br/><br/>
+	<p>The currently selected option:
+	<ul>
+		<li>index: <div id="selected_index"></div></li>
+		<li>label: <div id="selected_label"></div></li>
+	</ul>
+	<br/><br/><br/>
+	</p>
 		
 </body>
 </html>
