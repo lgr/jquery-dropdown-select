@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery </title>
+	<meta charset="utf-8" />
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<style type="text/css">
+		
+		/* This CSS is for the demo page only */
+		
+		BODY {
+			width: 800px;
+			font: 14px Verdana;
+			line-height: 1.4;
+			margin: 20px auto;
+		}
+		
+		H1 {
+			font-weight: bold;
+			border-bottom: solid 2px #EEE;
+			margin-top: 3.5em;
+		}
+						
+		img.icon {
+			width: 16px;
+			height: 16px;
+			float: left;
+			border: none;
+			margin: 2px 5px 1px 3px;
+		}
+				
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery.dropdownselect.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+		$('#demo_menu').DropDownSelect({
+			initial_value: 0,
+			css: {element: {'max-width': 165}},
+			choices: [{id: 0, label: '<img class="icon" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/22px-Commons-logo.svg.png"/>Add item'}, 
+				{id: 1, label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/22px-Flag_of_Spain.svg.png\"/>Do something else"},
+				{id: 2, label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/24px-Wikiquote-logo.svg.png\"/>Make Private"},
+				{id: 2, label: "<img class=\"icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/POL_Warszawa_COA.svg/100px-POL_Warszawa_COA.svg.png\"/>Public"},
+			]
+		});
+	});
+	</script>
+
+</head>
+<body>
+	
+	<h1>jQuery Bootstrap-style Dropdowns</h1>
+	
+	<h2>Description</h2>
+	<p>
+		This is a demonstration page that shows a simple drop down select menu. The menu was created on the basis of the standard jQuery UI elements. The main reason is that standard jQuery UI don't offer any widget of this kind.
+
+		Wanna contribute to this project?  <a href="https://github.com/claviska/jquery-dropdown">It’s on GitHub</a>
+	</p>
+	
+	<div id="demo_menu"></div>
+	<br/><br/><br/><br/>
+		
+</body>
+</html>
